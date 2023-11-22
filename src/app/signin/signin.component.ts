@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { RestapiService } from '../service/userdata/restapi.service';
+import { user } from "../service/userdata/user";
 
 @Component({
   selector: 'app-signin',
@@ -15,7 +17,7 @@ export class SigninComponent {
   email:string;
   password:string;
 
-  constructor(private router:Router){
+  constructor(private router:Router,private restapi:RestapiService){
 
     this.changetype=true;
     this.viewIcon=true;
@@ -24,16 +26,44 @@ export class SigninComponent {
     this.password="";
   }
 
+  // login(){
+  //   if(this.id=="admin123@gmail.com" && this.password=="admin123"){
+  //     localStorage.setItem("isAuthorized","true");
+  //     this.router.navigate(['/dashboard']);
+  //   }else if(this.id=="jacobjabakumar2002@gmail.com" && this.password=="jack732"){
+  //     localStorage.setItem("isAuthorized","true");
+  //     this.router.navigate(['/dashboard']);
+  //   }else{
+  //     alert('Invalid Data !');
+  //   }
+  // }
+
+
+  ngOnInit(): void {
+   this.loadUsers()
+  }
+
+  loadUsers(){
+    console.log(this.restapi.getUsers());
+  }
+
+
+  onSubmit(){
+    this.restapi.getUser(this.email);
+  }
+
+
   login(){
-    if(this.email=="admin123@gmail.com" && this.password=="admin123"){
-      localStorage.setItem("isAuthorized","true");
-      this.router.navigate(['/dashboard']);
-    }else if(this.email=="jacobjabakumar2002@gmail.com" && this.password=="jack732"){
-      localStorage.setItem("isAuthorized","true");
-      this.router.navigate(['/dashboard']);
-    }else{
-      alert('Invalid Data !');
-    }
+    // console.log(model);
+    // this.restapi.getUser(this.email).subscribe(
+    //   (response: any) => {
+    //     console.log(response);
+        this.router.navigate(['/dashboard/hotel']);
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   }
+    // );
   }
 
   toSignup(){

@@ -25,3 +25,16 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## JSON Server
+
+To use JSON server db.json file. run following commands
+
+
+  run to install json server modules - 
+
+    npm install -g json-server
+
+  use this to run everytime you use server -
+
+    json-server --watch db.json

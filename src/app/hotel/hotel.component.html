@@ -1,0 +1,24 @@
+<div class="flex w-full h-full pb-52 bg-cyan-300">
+    
+   <div class="flex mx-auto mt-10 border-4 border-black rounded-lg">
+    <table class="mx-auto border-4 border-none rounded">
+        <th class="h-12 px-2 text-2xl font-extrabold border-2 border-black w-fit">Hotel Name</th>
+        <th class="h-12 px-2 text-2xl font-extrabold border-2 border-black w-fit">Location</th>
+        <th class="h-12 px-2 text-2xl font-extrabold border-2 border-black w-fit">Star</th>
+        <th class="h-12 px-2 text-2xl font-extrabold border-2 border-black w-fit">Contact Number</th>
+        <th class="h-12 px-2 text-2xl font-extrabold border-2 border-black w-fit">AC/ NON AC</th>
+
+        <tr class="border-2 border-black" *ngFor="let item of Hotel" >
+            <td class="px-2 text-lg font-semibold border-2 border-black text-start" >{{item.hotelName}}</td>
+            <td class="px-2 text-lg font-semibold text-center border-2 border-black" >{{item.Location}}</td>
+            <td class="px-2 text-lg font-semibold text-center border-2 border-black" >
+                <!-- {{item.star}} -->
+                <app-star [value]="star"></app-star>
+            </td>
+            <td class="px-2 text-lg font-semibold text-center border-2 border-black" >{{item.contact}}
+            </td>
+            <td class="px-2 text-lg font-semibold text-center border-2 border-black" >{{item.ACnonAC}}</td>
+        </tr>
+    </table>   
+   </div>
+</div>

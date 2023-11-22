@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
+  username:string;
+
+  constructor(){
+    this.username='Jacob'
+  }
+
 }

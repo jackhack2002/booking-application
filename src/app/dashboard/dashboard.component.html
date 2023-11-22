@@ -1,1 +1,13 @@
-<p>dashboard works!</p>
+<div class="h-fit w-full mx-2">
+    <nav class="bg-sky-400 w-full h-14 flex items-stretch justify-between">
+        <div class="w-1/4 h-fit my-auto text-white text-md font-semibold mx-5 items-stretch justify-between flex">
+            <button routerLink="hotel" class="px-2 py-1 bg-blue-800 rounded-md hover:bg-teal-600 hover:text-gray-800">HOTEL</button>
+            <button routerLink="booking" class="px-2 py-1 bg-blue-800 rounded-md hover:bg-teal-600 hover:text-gray-800">BOOKING</button>
+            <button routerLink="travel" class="px-2 py-1 bg-blue-800 rounded-md hover:bg-teal-600 hover:text-gray-800">TRAVEL</button>
+        </div>
+        <div class="w-fit h-fit text-white text-lg font-bold mr-8 my-auto">
+            <h2>{{username}}</h2>
+        </div>
+    </nav>
+</div>
+<router-outlet></router-outlet>
